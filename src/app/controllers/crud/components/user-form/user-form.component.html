@@ -1,0 +1,37 @@
+<form [formGroup]="userForm">
+  <po-input name="input" class="po-md-12" formControlName="name" p-label="Nome">
+  </po-input>
+  <po-datepicker
+    class="po-md-6"
+    formControlName="dateBirth"
+    p-clean
+    p-format="dd/mm/yyyy"
+    p-label="Data de Nascimento"
+  >
+  </po-datepicker>
+  <po-input
+    name="input"
+    class="po-md-6"
+    formControlName="identity"
+    p-label="RG/CPF"
+    p-mask="{{ inputMask }}"
+    (keyup)="onVerifyMaskKeyup($event.target.value)"
+  >
+  </po-input>
+  <po-input
+    name="input"
+    class="po-md-6"
+    formControlName="phone"
+    p-label="Telefone"
+    p-mask="(99) 99999-9999"
+  >
+  </po-input>
+  <po-radio-group
+    class="po-md-6"
+    name="organDonor"
+    formControlName="organDonor"
+    p-label="Doador de Órgãos"
+    [p-options]="optionsOrganDonor"
+  >
+  </po-radio-group>
+</form>

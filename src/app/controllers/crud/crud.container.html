@@ -1,0 +1,26 @@
+  <po-page-list
+  p-title="Cadastro usuário"
+  [p-actions]="actions"
+  [p-disclaimer-group]="disclaimerGroup"
+  [p-filter]="filterSettings"
+>
+
+  <app-table-users
+    [items]="usersListFiltered"
+    (edit)="editUser($event)"
+    (delete)="deleteUser($event)"
+  ></app-table-users>
+</po-page-list>
+
+<po-modal #addModal p-title="Adicionar usuário" [p-primary-action]="confirmAdd" [p-secondary-action]="closeAdd">
+  <app-user-form [userForm]="userForm" [optionsOrganDonor]="optionsOrganDonor" [inputMask]="mask" (mask)="verifyMaskKeyup($event)"></app-user-form>
+</po-modal>
+
+<po-modal #editModal p-title="Editar usuário" [p-primary-action]="confirmEdit" [p-secondary-action]="closeEdit">
+  <app-user-form [userForm]="userForm" [optionsOrganDonor]="optionsOrganDonor" [inputMask]="mask" (mask)="verifyMaskKeyup($event)"></app-user-form>
+</po-modal>
+
+<po-modal #delModal p-title="Excluir usuário" [p-primary-action]="confirmDel" [p-secondary-action]="closeDel">
+  <p>Deseja realmente excluir o usuário <b>{{ selectedUser?.name }}</b>?</p>
+</po-modal>
+
