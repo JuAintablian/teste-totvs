@@ -21,7 +21,7 @@ export const initialDataUser: Array<User> = [
   },
   {
     id: 3,
-    name: 'João da Silva',
+    name: 'Lara Matos',
     dateBirth: '1995-05-20',
     identity: '98765432130',
     phone: '11988569236',

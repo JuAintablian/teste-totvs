@@ -1,0 +1,12 @@
+<po-page-default p-title="Trendings">
+  <p>Lista indica os melhores filmes ou séries pelo período selecionado.</p>
+
+  <app-filter
+  class="po-md-12 po-pb-2 po-pt-2 po-pl-0 po-m-0"
+    [formFilter]="formFilter"
+    [optionsCategory]="optionsCategory"
+    [optionsPeriod]="optionsPeriod"
+  ></app-filter>
+
+  <app-grid-trends [trendsList]="trendsList" [category]="formFilter.value.category"></app-grid-trends>
+</po-page-default>

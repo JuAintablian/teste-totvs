@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrudContainerComponent } from './controllers/crud/crud.container';
+import { TrendingContainerComponent } from './controllers/trending/trending.container';
 
 
 const routes: Routes = [
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'trending',
-    component: CrudContainerComponent
+    component: TrendingContainerComponent
   }
 ];
 

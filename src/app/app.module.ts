@@ -12,6 +12,10 @@ import { TableUsersComponent } from './controllers/crud/components/table-users/t
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RgCpfPipe } from './shared/pipes/rg-cpf.pipe';
 import { TelefonePipe } from './shared/pipes/telefone.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { TrendingContainerComponent } from './controllers/trending/trending.container';
+import { GridTrendsComponent } from './controllers/trending/components/grid-trends/grid-trends.component';
+import { FilterComponent } from './controllers/trending/components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { TelefonePipe } from './shared/pipes/telefone.pipe';
     UserFormComponent,
     TableUsersComponent,
     RgCpfPipe,
-    TelefonePipe
+    TelefonePipe,
+    TrendingContainerComponent,
+    GridTrendsComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,8 @@ import { TelefonePipe } from './shared/pipes/telefone.pipe';
     PoModule,
     RouterModule.forRoot([]),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

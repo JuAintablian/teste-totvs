@@ -1,0 +1,20 @@
+<div>
+  <form [formGroup]="formFilter">
+    <po-select
+      class="po-md-3 po-pl-0"
+      name="select"
+      p-label="Categoria"
+      formControlName="category"
+      [p-options]="optionsCategory"
+    >
+    </po-select>
+    <po-select
+      class="po-md-3"
+      name="select"
+      p-label="Período"
+      formControlName="period"
+      [p-options]="optionsPeriod"
+    >
+    </po-select>
+  </form>
+</div>
