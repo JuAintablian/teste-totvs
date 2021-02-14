@@ -134,10 +134,10 @@ export class CrudContainerComponent implements OnInit {
   }
 
   confirmDelUser() {
-    const i = this.usersList.findIndex(item => item.id === this.selectedUser.id);
+    const i = this.usersListFiltered.findIndex(item => item.id === this.selectedUser.id);
     this.usersListFiltered.splice(i, 1);
 
-    localStorage.setItem('data', JSON.stringify(this.usersList));
+    localStorage.setItem('data', JSON.stringify(this.usersListFiltered));
     this.delModal.close();
   }
 
@@ -156,21 +156,21 @@ export class CrudContainerComponent implements OnInit {
   }
 
   saveUser() {
-    const id = this.usersList[this.usersList.length - 1].id + 1;
+    const id = this.usersListFiltered[this.usersListFiltered.length - 1].id + 1;
     const user: User = {...this.userForm.value, id, actions: ['edit', 'del']};
 
-    this.usersList.push(user);
+    this.usersListFiltered.push(user);
 
-    localStorage.setItem('data', JSON.stringify(this.usersList));
+    localStorage.setItem('data', JSON.stringify(this.usersListFiltered));
     this.addModal.close();
   }
 
   updateUser() {
     const user = this.userForm.value;
-    const i = this.usersList.findIndex(item => item.id === user.id);
+    const i = this.usersListFiltered.findIndex(item => item.id === user.id);
 
-    this.usersList[i] = {
-      ...this.usersList[i],
+    this.usersListFiltered[i] = {
+      ...this.usersListFiltered[i],
       name: user.name,
       dateBirth: user.dateBirth,
       identity: user.identity,
@@ -178,7 +178,7 @@ export class CrudContainerComponent implements OnInit {
       organDonor: user.organDonor
     };
 
-    localStorage.setItem('data', JSON.stringify(this.usersList));
+    localStorage.setItem('data', JSON.stringify(this.usersListFiltered));
     this.editModal.close();
   }
 
