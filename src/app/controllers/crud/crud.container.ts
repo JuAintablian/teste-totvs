@@ -30,7 +30,7 @@ export class CrudContainerComponent implements OnInit {
   optionsOrganDonor = [
     { label: 'Sim', value: true },
     { label: 'Não', value: false }
-  ]
+  ];
 
   @ViewChild('addModal', {static: true}) addModal: PoModalComponent;
   @ViewChild('editModal', {static: true}) editModal: PoModalComponent;
