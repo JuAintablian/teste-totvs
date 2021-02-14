@@ -162,6 +162,7 @@ export class CrudContainerComponent implements OnInit {
     const id = this.usersListFiltered[this.usersListFiltered.length - 1].id + 1;
     const user: User = {...this.userForm.value, id, actions: ['edit', 'del']};
 
+    this.usersList.push(user);
     this.usersListFiltered.push(user);
 
     localStorage.setItem('data', JSON.stringify(this.usersListFiltered));
