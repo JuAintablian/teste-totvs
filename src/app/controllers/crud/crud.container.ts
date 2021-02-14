@@ -22,8 +22,9 @@ export class CrudContainerComponent implements OnInit {
 
   disclaimerGroup;
   userForm: FormGroup;
-  usersList: Array<User> = JSON.parse(localStorage.getItem('data'));
-  usersListFiltered: Array<User> = [...this.usersList];
+  usersList: Array<User>;
+  usersListFiltered: Array<User>;
+
   mask = '99.999.999-999';
   selectedUser: User;
 
@@ -98,6 +99,8 @@ export class CrudContainerComponent implements OnInit {
 
   setInitialData() {
     localStorage.setItem('data', JSON.stringify(initialDataUser));
+    this.usersList = JSON.parse(localStorage.getItem('data'));
+    this.usersListFiltered = [...this.usersList];
   }
 
   createUserForm() {
